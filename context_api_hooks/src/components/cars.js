@@ -1,5 +1,6 @@
 
 import React, {useState} from 'react';
+import { v4 as uuidv4 } from 'uuid';
 
 function Cars() {
 
@@ -9,8 +10,12 @@ function Cars() {
         {title: 'Holidays Cars', id : 3}
 
     ])
+
+    const addCar = ()=>{
+      setCars([...cars, {title: 'new song', id: uuidv4()}])
+    }
   return (
-    <div className="song-list">s
+    <div className="cars-list">s
        <ul>
          {
              cars.map(car =>{
@@ -18,6 +23,8 @@ function Cars() {
              })
          }
        </ul>
+
+       <button onClick={addCar}>Add Car</button>
     </div>
   );
 }
