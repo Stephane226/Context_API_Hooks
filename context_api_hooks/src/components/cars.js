@@ -1,6 +1,7 @@
 
-import React, {useState} from 'react';
+import React, {useState,useEffect} from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import CarForm from './carsForm'
 
 function Cars() {
 
@@ -11,9 +12,14 @@ function Cars() {
 
     ])
 
-    const addCar = ()=>{
-      setCars([...cars, {title: 'new song', id: uuidv4()}])
+    const addCar = (title)=>{
+      setCars([...cars, {title: title, id: uuidv4()}])
     }
+
+    useEffect( ()=>{
+      console.log("rendered")
+    },[cars])
+    
   return (
     <div className="cars-list">s
        <ul>
@@ -24,7 +30,7 @@ function Cars() {
          }
        </ul>
 
-       <button onClick={addCar}>Add Car</button>
+      <CarForm addCar={addCar}/>
     </div>
   );
 }
