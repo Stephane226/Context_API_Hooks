@@ -3,6 +3,7 @@ import './App.css';
 import CarContextProvider from './components/CarsContext'
 import Navbar from './components/navbar'
 import CarsList from './components/carsList';
+import Form from './components/form';
 
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
 
           <Navbar/>
           <CarsList/>
+          <Form/>
      </CarContextProvider>
 
     </div>
