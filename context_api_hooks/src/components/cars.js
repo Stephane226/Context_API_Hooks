@@ -19,7 +19,7 @@ function Cars() {
     useEffect( ()=>{
       console.log("rendered")
     },[cars])
-    
+
   return (
     <div className="cars-list">s
        <ul>
@@ -28,7 +28,7 @@ function Cars() {
                return  <li key={car.id}>{car.title} </li>
              })
          }
-       </ul>
+       </ul> 
 
       <CarForm addCar={addCar}/>
     </div>
